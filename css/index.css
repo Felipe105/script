@@ -1,0 +1,158 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Fin Reset*/
+
+body{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  padding-top: 50px;
+  font-family: 'Indie Flower';
+  text-shadow: black 5px 5px 5px  ;
+}
+
+video{
+  margin-top:-239px;
+  top: 50%;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-30%);
+
+  min-width: 100%;
+  min-height: 100vh;
+
+  position: fixed;
+  z-index: -1;
+}
+
+.redes{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  top: 35%;
+  left: 0;
+  filter: invert(1);
+  background: rgba(255, 255, 255, 0.712);
+  border-radius: 10%;
+  padding: 10px;
+  box-shadow: rgb(255, 255, 255) 5px 5px 5px;
+}
+
+.redes img{
+  width: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+.pages{
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  width: 70vw;
+  bottom: 15%;
+  border-radius: 10px; 
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.699);
+  transition-duration: 250ms;
+  box-shadow: rgb(0, 0, 0) 1px 1px 10px 3px;
+
+}
+
+.page{
+  width: 164px;
+  height: 164px;
+  background: rgba(75, 2, 117, 0.719);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  box-sizing: content-box;
+  
+}
+
+.page{
+  transition-duration: 450ms;
+}
+.pages:hover .page{
+  opacity: .7;
+ 
+}
+
+.pages:hover .page:hover{
+  opacity: 1;
+  transform: scale(1.4);
+}
+
+.page:hover{
+  opacity: 1;
+}
+.page a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: content-box;
+  text-decoration: none;
+
+}
+
+.page img{
+  width: 140px;
+}
+
+.page span{
+  padding: 10px;
+  color: rgb(10, 245, 245);
+}
