@@ -24,10 +24,8 @@ aside{
   width: 600px;
   height: 600px;
   border: red solid 5px;
-
-
 }
 .partes{
   width: 200px;
-
+  z-index: 1;
 }
