@@ -77,14 +77,18 @@
           <div class="pointer">
 
           </div>
-       
         </div>
     </div>
   </main>
+  <div class="menu" id="menu">
+
+  </div>
+
   <script>
     var partes = document.getElementsByClassName('partes');
     var pointer = document.getElementsByClassName('pointer')
-    
+    var menu = document.getElementById('menu')
+
     var aside = document.getElementById('aside')
 
     var marco = document.getElementById('marco')
@@ -242,7 +246,20 @@
         }
 
         if (val1 && val2 && val3 && val4 && val5 && val6 && val7 && val8 && val9) {
-            alert('Ganaste')
+          for (let i = 0; i < partes.length; i++) {
+            partes[i].style.display = 'none'
+            pointer[i].style.background = "rgba(0,0,0,0)"
+          }
+          marco.style.transform = 'scale(1.2) translateX(-90%) rotate(360deg)'
+          aside.style.background =  'black'
+          aside.style.border = 'none'
+          menu.style.transform = 'translateY(0)' 
+          menu.style.visibility = 'visible'
+          menu.style.animation = 'colorcito'
+          menu.style.animationPlayState = 'running'
+          menu.style.animationDuration = '1.2s'
+          menu.style.animationIterationCount = 'infinite'
+          menu.style.animationDirection = 'alternate'
         }
      }
     

@@ -49,11 +49,12 @@ main{
 
 aside{
   background: rgb(29, 29, 29);
+  border-right: 10px solid rgb(0, 140, 255);
+  transition: all 1s;
 }
 .area{
   display: flex;
   background: rgb(0, 0, 0);
-  border-left: 10px solid rgb(0, 140, 255);
 }
 .marco{
   display: grid;
@@ -63,27 +64,45 @@ aside{
   margin-left: 16vw;
   height: 36vw;
   box-sizing: content-box;
-
+  transition: all 1s;
+  background-image: url('../imagenes/112884.jpg');
+  background-size: 100%;
 }
 .partes{
   width: 12vw;
   transition: opacity 1s;
-  
 }
 
 .pointer{
   width: 12vw;
   height: 12vw;
   background: black;
-  
+  transition: all 1s;
+}
+
+.menu{
+  border: 20px solid rgb(0, 140, 255);
+  background: rgb(29, 29, 29);
+  height: 40vw;
+  width: 40vw;
+  position: absolute;
+  top: 5%;
+  right:5%;
+  visibility: hidden;
+  transform: translateY(-200%);
+  transition: all 1s;
+  border-radius: 50px;
+  transition-delay: .5s;
 }
 
 @keyframes colorcito{
   0%{
     border: rgb(0, 140, 255) solid 5px;
+    box-shadow: rgb(0, 140, 255) 0px 0px 50px;
   }
   100%{
     border: rgb(145, 255, 0) solid 5px;
+    box-shadow: rgb(145, 255, 0) 0px 0px 50px;
   }
 }
 
@@ -96,3 +115,4 @@ aside{
 
   }
 }
+
