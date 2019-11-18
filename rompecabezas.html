@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Monoton|Trade+Winds&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/armar.css">
   <script src="dom-drag.js"></script>
-  <title>Document</title>
+  <title>rompecabezas</title>
 </head>
 <body onresize="AparecerPartes()" >
 
@@ -81,26 +82,52 @@
     </div>
   </main>
   <div class="menu" id="menu">
+    <h1>thanks for playing</h1>
+    <div class="container">
+      <div class="item" id="reset" onclick="Reset()"><figure><span>Reset</span></figure></div>
+      <script>
+       function Reset() {
+      AparecerPartes()
+      for (let i = 0; i < partes.length; i++) {
+        pointer[i].style.background = "rgb(0,0,0)"
+        partes[i].style.display = 'initial'
+        
 
+      }
+      marco.style.transform = 'scale(1) translateX(0) rotate(-360deg)'
+      aside.style.borderRight = '10px solid rgb(0, 140, 255)'
+      menu.style.transform = 'translateY(-200%)' 
+      menu.style.visibility = 'hidden'
+      menu.style.animation = 'none'     
+      aside.style.background =  'rgb(29, 29, 29)'
+
+      val1 = false
+      val2 = false
+      val3 = false
+      val4 = false
+      val5 = false
+      val6 = false
+      val7 = false
+      val8 = false
+      val9 = false
+     }
+</script>
+      <div class="item"><figure><a href="index.html"><span>Home</span></a></figure></div>
+      <div class="item"><figure><a href="pag3.html"><span>Next</span></a></figure></div>
+    </div>
   </div>
 
   <script>
     var partes = document.getElementsByClassName('partes');
-    var pointer = document.getElementsByClassName('pointer')
-    var menu = document.getElementById('menu')
-
-    var aside = document.getElementById('aside')
-
-    var marco = document.getElementById('marco')
-
+    var pointer = document.getElementsByClassName('pointer');
+    var menu = document.getElementById('menu');
+    var aside = document.getElementById('aside');
+    var marco = document.getElementById('marco');
+    var reset = document.getElementById('reset');
     var comprobar = new Array();
     var position = new Array();
-
     var comprobador = 0;
-    
     var terminador = 0;
-    
-   
     
     var x
     var y
@@ -264,6 +291,7 @@
           AnimacionFinal()
         }
      }
+     
     
     </script>
 </body>

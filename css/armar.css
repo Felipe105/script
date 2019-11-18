@@ -11,8 +11,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: sans-serif;
-  font-size: 12.7vw;
+  font-family: 'Trade Winds', cursive;
+  font-size: 8.7vw;
   padding: 10px;
 }
 #start{
@@ -30,6 +30,10 @@ body{
   animation-iteration-count: infinite;
   animation-fill-mode: ease;
   transition: transform 1s;
+}
+a{
+  color: white;
+  text-decoration: none;
 }
 
 #start:hover{
@@ -71,6 +75,7 @@ aside{
 .partes{
   width: 12vw;
   transition: opacity 1s;
+  z-index: 4;
 }
 
 .pointer{
@@ -87,14 +92,48 @@ aside{
   width: 40vw;
   position: absolute;
   top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   right:5%;
   visibility: hidden;
   transform: translateY(-200%);
   transition: all 1s;
   border-radius: 50px;
   transition-delay: .5s;
+  color: white;
 }
 
+h1{
+  font-family: 'Julius Sans One', sans-serif;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+  font-size: 4vw;
+}
+.container{
+  display: grid;
+  grid-template: 15vw 15vw / 15vw 15vw;
+  margin-top: 10vh;
+}
+.item:first-child{
+  grid-column: 1 / -1;
+}
+.item{
+  font-family: 'Trade Winds', cursive;
+  font-size: 4vw;
+  text-align: center;
+  cursor: pointer;
+}
+.item:hover,.item a:hover{
+  color: purple;
+}
+
+
+.item:active,.item a:active{
+  color: darkturquoise;
+}
 @keyframes colorcito{
   0%{
     border: rgb(0, 140, 255) solid 5px;
