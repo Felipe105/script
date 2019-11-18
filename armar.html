@@ -9,45 +9,220 @@
   <script src="dom-drag.js"></script>
   <title>Document</title>
 </head>
-<body>
+<body onresize="AparecerPartes()">
+
   <main>
-    <aside>
-        <img src="imagenes/1.png" class="partes"  style="position: absolute;">
-        <img src="imagenes/2.png" class="partes"  style="position: absolute;">
-        <img src="imagenes/3.png" class="partes"  style="position: absolute;">
-        <img src="imagenes/4.png" class="partes"  style="position: absolute;">
-        <img src="imagenes/6.png" class="partes"  style="position: absolute;">
-        <img src="imagenes/7.png" class="partes"  style="position: absolute;">
-        <img src="imagenes/8.png" class="partes"  style="position: absolute;">
-        <img src="imagenes/9.png" class="partes"  style="position: absolute;">
+
+    <aside id="aside">
+        <img src="imagenes/1.png" class="partes" draggable="true" onmouseover="Color(0)" onmouseout="Normalize(0)" onmouseup="Ajustar(0)" style="position: absolute;">
+        <img src="imagenes/2.png" class="partes" draggable="true" onmouseover="Color(1)" onmouseout="Normalize(1)" onmouseup="Ajustar(1)" style="position: absolute;">
+        <img src="imagenes/3.png" class="partes" draggable="true" onmouseover="Color(2)" onmouseout="Normalize(2)" onmouseup="Ajustar(2)" style="position: absolute;">
+        <img src="imagenes/4.png" class="partes" draggable="true" onmouseover="Color(3)" onmouseout="Normalize(3)" onmouseup="Ajustar(3)" style="position: absolute;">
+        <img src="imagenes/5.png" class="partes" draggable="true" onmouseover="Color(4)" onmouseout="Normalize(4)" onmouseup="Ajustar(4)" style="position: absolute;">
+        <img src="imagenes/6.png" class="partes" draggable="true" onmouseover="Color(5)" onmouseout="Normalize(5)" onmouseup="Ajustar(5)" style="position: absolute;">
+        <img src="imagenes/7.png" class="partes" draggable="true" onmouseover="Color(6)" onmouseout="Normalize(6)" onmouseup="Ajustar(6)" style="position: absolute;">
+        <img src="imagenes/8.png" class="partes" draggable="true" onmouseover="Color(7)" onmouseout="Normalize(7)" onmouseup="Ajustar(7)" style="position: absolute;">
+        <img src="imagenes/9.png" class="partes" draggable="true" onmouseover="Color(8)" onmouseout="Normalize(8)" onmouseup="Ajustar(8)" style="position: absolute;">
     </aside>
-    <div class="area">
-        <div class="marco">
-          <img src="imagenes/5.png" class="partes">
+    <div class="area" id="area">
+        <div class="marco" id="marco">
+          <div class="pointer">
+
+          </div>
+          <div class="pointer">
+
+          </div>
+          <div class="pointer">
+
+          </div>
+          <div class="pointer">
+
+          </div>
+          <div class="pointer">
+              
+          </div>
+          <div class="pointer">
+
+          </div>
+          <div class="pointer">
+
+          </div>
+          <div class="pointer">
+
+          </div>
+          <div class="pointer">
+
+          </div>
+       
         </div>
     </div>
   </main>
   <script>
     var partes = document.getElementsByClassName('partes');
+    var pointer = document.getElementsByClassName('pointer')
+    
+    var aside = document.getElementById('aside')
 
+    var marco = document.getElementById('marco')
+
+    var comprobar = new Array();
+    var position = new Array();
+
+    var comprobador = 0;
+    
+    var terminador = 0;
+    
+    
+    
     var x
     var y
-
+    
     function Random() {
-      x = Math.floor(Math.random() * (300  -  1 + 1)) + 1;
+      x = Math.floor(Math.random() * (aside.offsetWidth-partes[0].width -  1 + 1)) + 1;
 
-      y = Math.floor(Math.random() * (600  -  1 + 1)) + 1;
+      y = Math.floor(Math.random() * (aside.offsetHeight-partes[0].height   -  1 + 1)) + 1;
       
+    }
+    function Oscurecer() {
+      for (let i = 0; i < partes.length; i++) {
+        partes[i].style.opacity = `.3`
+        
+      }
+     
+    }
+
+     function MarcoAnimacion() {
+       marco.style.animation = 'colorcito'
+       marco.style.animationPlayState = 'running'
+       marco.style.animationDuration = '1.2s'
+       marco.style.animationIterationCount = 'infinite'
+       marco.style.animationDirection = 'alternate'
+     }
+
+     function Detener() {
+      marco.style.animationName = 'none'
+     }
+
+    function Color(a) {
+      Oscurecer()
+      MarcoAnimacion()
+      partes[a].style.opacity = `1`
     }
     
-
-    for (let i = 0; i < partes.length; i++) {
-        Drag.init(partes[i],null,0,null,0,700)
-        Random()
-         partes[i].style.left = `${x}px`
-         partes[i].style.top = `${y}px`
+    function AparecerPartes() {
+      for (let i = 0; i < partes.length; i++) {
+      Random()
+      partes[i].style.left = `${x}px`
+      partes[i].style.top = `${y}px`
+      
       
     }
-  </script>
+    }
+    
+    for (let i = 0; i < partes.length; i++) {
+      Drag.init(partes[i],null,0,null,0,aside.offsetHeight)
+      Random()
+      partes[i].style.left = `${x}px`
+      partes[i].style.top = `${y}px`
+      
+      
+    }
+
+  
+    
+    var x1
+    var y1
+     
+     function Ajustar(b) {
+      for (let i = 0; i < partes.length; i++) {
+      position[i] = partes[i].getBoundingClientRect();
+    
+      
+     }
+     for (let i = 0; i < pointer.length; i++) {
+       comprobar[i] = pointer[i].getBoundingClientRect();
+     
+     }
+     
+      x1 = comprobar[b].top
+      y1 = comprobar[b].left
+      
+      yminaprox = y1 - 20
+
+      ymaxaprox = y1 + 20
+
+
+      xminaprox = x1 - 20
+
+      xmaxaprox = x1 + 20
+
+      if (position[b].top > xminaprox &&  position[b].top < xmaxaprox && position[b].left > yminaprox && position[b].left < ymaxaprox) {
+        partes[b].style.top = `${x1}px`
+        partes[b].style.left = `${y1}px`
+        Terminar(b)
+      }
+
+
+     }
+
+     
+   
+
+    
+     
+     function  Normalize(b) {
+       for (let i = 0; i < partes.length; i++) {
+         partes[i].style.opacity = `1`
+       }
+       Detener()
+     }
+
+      var val1 = false; 
+      var val2 = false;
+      var val3 = false;
+      var val4 = false;
+      var val5 = false;
+      var val6 = false;
+      var val7 = false;
+      var val8 = false;
+      var val9 = false;     
+
+     function Terminar(event) {
+        console.log(event);
+        
+        if (event==0) {
+          val1 = true;
+        }
+        if (event==1) {
+          val2 = true;
+        }
+        if (event==2) {
+          val3 = true;
+        }
+        if (event==3) {
+          val4 = true;
+        }
+        if (event==4) {
+          val5 = true;
+        }
+        if (event==5) {
+          val6 = true;
+        }
+        if (event==6) {
+          val7 = true;
+        }
+        if (event==7) {
+          val8 = true;
+        }
+        if (event==8) {
+           val9 = true;
+        }
+
+        if (val1 && val2 && val3 && val4 && val5 && val6 && val7 && val8 && val9) {
+            alert('Ganaste')
+        }
+     }
+    
+    </script>
 </body>
 </html>
