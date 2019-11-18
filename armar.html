@@ -30,10 +30,23 @@
   <script>
     var partes = document.getElementsByClassName('partes');
 
-    for (let i = 0; i < partes.length; i++) {
-      
-        Drag.init(partes[i])
+    var x
+    var y
 
+    function Random() {
+      x = Math.floor(Math.random() * (300  -  1 + 1)) + 1;
+
+      y = Math.floor(Math.random() * (600  -  1 + 1)) + 1;
+      
+    }
+    
+
+    for (let i = 0; i < partes.length; i++) {
+        Drag.init(partes[i],null,0,null,0,700)
+        Random()
+         partes[i].style.left = `${x}px`
+         partes[i].style.top = `${y}px`
+      
     }
   </script>
 </body>
