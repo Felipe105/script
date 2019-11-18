@@ -1,6 +1,50 @@
+body{
+  background: rgb(29, 29, 29);
+}
+
+#boton_container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 12.7vw;
+  padding: 10px;
+}
+#start{
+  cursor: pointer;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background: rgb(0, 189, 189);
+  color: rgb(255, 255, 255);
+  animation-name: boton;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: ease;
+  transition: transform 1s;
+}
+
+#start:hover{
+  transform: scale(1.1);
+}
+
+#start img{
+  height: 12vw;
+}
 main{
   display: grid;
   grid-template: 100vh / .5fr 1fr;
+  visibility: hidden;
+  transition: opacity 1s;
+  opacity: 0;
 }
 
 aside{
@@ -43,3 +87,12 @@ aside{
   }
 }
 
+@keyframes boton {
+  0%{
+    background: rgb(0, 129, 189);;
+  }
+  100%{
+    background: rgb(120, 0, 189);;
+
+  }
+}

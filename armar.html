@@ -9,9 +9,33 @@
   <script src="dom-drag.js"></script>
   <title>Document</title>
 </head>
-<body onresize="AparecerPartes()" onload="AparecerPartes()">
+<body onresize="AparecerPartes()" >
 
-  <main>
+  <div href="#" id="boton_container" >
+    <div id="start" onclick="Start()">
+        <img src="imagenes/play.png">
+        <p>
+          Start
+        </p>
+    </div>
+  </div>
+  <script>
+    function Start() {
+      var main = document.getElementById('main')
+      var boton_container = document.getElementById('boton_container')
+      boton_container.style.display = 'none'
+      for (let i = 0; i < 9; i++) {
+        Random()
+        partes[i].style.left = `${x}px`
+        partes[i].style.top = `${y}px`
+        
+      }
+      main.style.visibility = 'visible'
+      main.style.opacity = '1'
+
+    }
+  </script>
+  <main id="main">
 
     <aside id="aside">
         <img src="imagenes/1.png" class="partes" draggable="true" onmouseover="Color(0)" onmouseout="Normalize(0)" onmouseup="Ajustar(0)" style="position: absolute;">
@@ -113,9 +137,9 @@
     
     function AparecerPartes() {
       for (let i = 0; i < partes.length; i++) {
-      Random()
-      partes[i].style.left = `${x}px`
-      partes[i].style.top = `${y}px`
+        Random()
+        partes[i].style.left = `${x}px`
+        partes[i].style.top = `${y}px`  
     }
     }
     
