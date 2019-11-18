@@ -9,7 +9,7 @@
   <script src="dom-drag.js"></script>
   <title>Document</title>
 </head>
-<body onresize="AparecerPartes()">
+<body onresize="AparecerPartes()" onload="AparecerPartes()">
 
   <main>
 
@@ -72,7 +72,7 @@
     
     var terminador = 0;
     
-    
+   
     
     var x
     var y
@@ -83,7 +83,7 @@
       y = Math.floor(Math.random() * (aside.offsetHeight-partes[0].height -  1 + 1)) + 1;
       
     }
-    
+
 
     function Oscurecer() {
       for (let i = 0; i < partes.length; i++) {
@@ -116,14 +116,11 @@
       Random()
       partes[i].style.left = `${x}px`
       partes[i].style.top = `${y}px`
-      
-      
     }
     }
     
     for (let i = 0; i < partes.length; i++) {
-      Drag.init(partes[i],null,0,null,0,aside.offsetHeight-partes[0].height)
-      Random()
+      Drag.init(partes[i],null,0,null,0,aside.offsetHeight)
       partes[i].style.left = `${x}px`
       partes[i].style.top = `${y}px`
       
