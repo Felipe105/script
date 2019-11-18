@@ -11,15 +11,17 @@ main{
 }
 
 .item{
-  border: 1px red solid;
-  background: rgb(37, 37, 37);
+  background: rgb(24, 23, 23);
 }
 
 nav{
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  overflow: auto;
+  overflow: hidden;
+  position: relative;
+  background: rgb(37, 37, 37) !important;
+
 }
 
 
@@ -33,15 +35,17 @@ nav{
 }
 
 .imagen-container{
-  border: 1px solid green;
+  border: 1px solid rgb(255, 7, 234);
   background: chocolate;
   box-shadow: rgba(0, 0, 0, 0.705) 5px 5px 10px ;
   height: 16vh;
+  transition: all 650ms;
   width: 28vh;
+  border-radius: 10px;
 }
 .wall{
-  width: 80%;
-
+  width: 90%;
+  transition: all 1650ms;
 }
 .wall img{
   width: 100%;
@@ -55,8 +59,59 @@ section{
 .imagen-container img{
   height: 100%;
   width: 100%;
+  border-radius: 10px;
+
 }
 .imagen-container a{
   width: 0;
   height: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.walls-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.boton2 ,.boton {
+  display: none;
+}
+.boton2 a,.boton a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1740px){
+  
+    .boton{
+      transform: rotate(-90deg);
+      background: linear-gradient(#000000,#00000000);
+      height: 28vh;
+      width:23.4vh;
+      position: fixed;
+      bottom: -2.5vh;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .boton2{
+      transform: rotate(90deg);
+      background: linear-gradient(#000000,#00000000);
+      height: 28vh;
+      width:23.4vh ;
+      position: fixed;
+      bottom: -2.5vh;
+      right: 2vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
 }

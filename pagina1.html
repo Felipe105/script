@@ -17,48 +17,103 @@
     </article>
     <section class="item">
 
-      <div class="wall">
-        <img src="https://www.xtrafondos.com/wallpapers/resized/escenas-de-guardianes-de-la-noche-4036.jpg?s=large" alt="">
-      </div>
+      <ul class="walls-container">
+        <li  class="wall">
+          <img src="https://www.xtrafondos.com/wallpapers/resized/escenas-de-guardianes-de-la-noche-4036.jpg?s=large" alt="">
+        </li>
+        <li  class="wall">
+          <img src="https://www.xtrafondos.com/wallpapers/resized/parque-nacional-steam-thingvellir-en-islandia-2750.jpg?s=large" alt="">
+        </li>
+        <li  class="wall">
+          <img src="https://www.xtrafondos.com/wallpapers/resized/the-legend-of-zelda-breath-of-the-wild-4066.jpg?s=large" alt="">
+        </li>
+        <li  class="wall">
+          <img src="https://www.xtrafondos.com/wallpapers/resized/amanecer-anime-chica-silueta-paisaje-3721.jpg?s=large" alt="">
+        </li>
+        <li  class="wall">
+          <img src="https://www.xtrafondos.com/wallpapers/resized/joaquin-phoenix-como-el-guason-3990.jpg?s=large" alt="">
+        </li>
+        <li  class="wall">
+          <img src="https://www.xtrafondos.com/wallpapers/resized/kanao-tsuri-de-kimetsu-no-yaiba-3988.jpg?s=large" alt="">
+        </li>
+      </ul>
 
     </section>
     <article class="item">
 
     </article>
     <nav class="item">
-      <div class="container">
-        <div class="imagen-container">
-          <a href="#">
+      <ul class="container">
+        <li class="imagen-container">
+          <a href="#" class="menu" onclick=Focus(0) name="pag0">
             <img src="https://www.xtrafondos.com/wallpapers/resized/escenas-de-guardianes-de-la-noche-4036.jpg?s=large">
           </a>
-        </div>
-        <div class="imagen-container">
-          <a href="#">
+        </li>
+        <li class="imagen-container">
+          <a href="#" class="menu" onclick=Focus(1) name="pag2" >
             <img src="https://www.xtrafondos.com/wallpapers/resized/parque-nacional-steam-thingvellir-en-islandia-2750.jpg?s=large">
           </a>
-        </div>
-        <div class="imagen-container">
-          <a href="#">
+        </li>
+        <li class="imagen-container">
+          <a href="#" class="menu" onclick=Focus(2) name="pag3">
             <img src="https://www.xtrafondos.com/wallpapers/resized/the-legend-of-zelda-breath-of-the-wild-4066.jpg?s=large">
           </a>
-        </div>
-        <div class="imagen-container">
-          <a href="#">
+        </li>
+        <li class="imagen-container">
+          <a href="#" class="menu" onclick=Focus(3) name="pag4">
             <img src="https://www.xtrafondos.com/wallpapers/resized/amanecer-anime-chica-silueta-paisaje-3721.jpg?s=large">
           </a>
-        </div>
-        <div class="imagen-container">
-          <a href="#">
+        </li>
+        <li class="imagen-container" >
+          <a href="#" class="menu" onclick=Focus(4) name="pag5">
             <img src="https://www.xtrafondos.com/wallpapers/resized/joaquin-phoenix-como-el-guason-3990.jpg?s=large">
           </a>
-        </div>
-        <div class="imagen-container">
-          <a href="#">
+        </li>
+        <li class="imagen-container">
+          <a href="#" class="menu" onclick=Focus(5) name="pag6">
             <img src="https://www.xtrafondos.com/wallpapers/resized/kanao-tsuri-de-kimetsu-no-yaiba-3988.jpg?s=large">
           </a>
-        </div>
+        </li>
+      </ul>
+
+
+      <div class="boton">
+          <a  class="botones" href="#pag0">
+            <img src="imagenes/icons8-below-52.png">
+          </a>
+
       </div>
+      <div class="boton2">
+        <a class="botones" href="#pag6">
+            <img src="imagenes/icons8-below-52.png">
+          
+        </a>
+        </div>
     </nav>
   </main>
+  <script>
+     var menus = document.getElementsByClassName('imagen-container') 
+     var wall = document.getElementsByClassName('wall')
+  
+    onload(Focus(4))
+
+     function Rehacer(){
+      for (let i = 0; i < menus.length ; i++) {
+          menus[i].style.transform = 'scale(1)'    
+          wall[i].style.display = 'none' 
+          menus[i].style.border = ' solid 2px rgb(255, 7, 234)'
+      }
+     }
+
+     function Focus(x){
+        Rehacer()
+        menus[x].style.transform = 'scale(1.1)'  
+        wall[x].style.display = 'flex'
+        menus[x].style.border = 'solid 2px rgb(7, 197, 255)'
+     }
+    
+    
+
+  </script>
 </body>
 </html>
