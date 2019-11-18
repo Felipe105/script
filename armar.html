@@ -80,9 +80,11 @@
     function Random() {
       x = Math.floor(Math.random() * (aside.offsetWidth-partes[0].width -  1 + 1)) + 1;
 
-      y = Math.floor(Math.random() * (aside.offsetHeight-partes[0].height   -  1 + 1)) + 1;
+      y = Math.floor(Math.random() * (aside.offsetHeight-partes[0].height -  1 + 1)) + 1;
       
     }
+    
+
     function Oscurecer() {
       for (let i = 0; i < partes.length; i++) {
         partes[i].style.opacity = `.3`
@@ -120,7 +122,7 @@
     }
     
     for (let i = 0; i < partes.length; i++) {
-      Drag.init(partes[i],null,0,null,0,aside.offsetHeight)
+      Drag.init(partes[i],null,0,null,0,aside.offsetHeight-partes[0].height)
       Random()
       partes[i].style.left = `${x}px`
       partes[i].style.top = `${y}px`
