@@ -131,11 +131,10 @@
           document.visor.ganadas.value++
           menu.style.transform = 'translateY(0)'
           home.style.display = 'flex'
-          jugarBoton.style.value = 'Restar'
+          jugarBoton.style.fontSize = '5vw'
           jugarBoton.style.left = '0'
           passFail.style.display = 'inline'
           passFail.src = 'imagenes/pass.png'
-
        } else {
          document.visor.perdidas.value++
          //construye la palabra solucion
@@ -159,7 +158,7 @@
   
   <form name="visor" class="game">
       <div id="menuContainer">
-        <input type="button" id="inicio" onclick="IniciaJuego(this.form)" onclick="Jugar()" value="Jugar">
+        <input type="button" id="inicio" onclick="IniciaJuego(this.form)"  value="Jugar">
         <a href="index.html" id="home">Inicio</a>
         <p id="correcta">
           
@@ -223,7 +222,6 @@
   var home = document.getElementById('home')
   var correcta = document.getElementById('correcta')
   var passFail = document.getElementById('pass-fail')
-  
 </script>
 </body>
 </html>
