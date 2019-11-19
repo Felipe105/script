@@ -1,3 +1,6 @@
+*{
+  font-family: sans-serif;
+}
 body{
   background-color: black;
   width: 100%;
@@ -68,7 +71,6 @@ video{
 .page{
   width: 164px;
   height: 164px;
-  background: rgba(75, 2, 117, 0.719);
   padding: 5px;
   display: flex;
   justify-content: center;
@@ -98,11 +100,14 @@ video{
   align-items: center;
   box-sizing: content-box;
   text-decoration: none;
-
+  font-family: sans-serif;
 }
 
 .page img{
   width: 140px;
+  height: 140px;
+  border-radius: 20px;
+  border: grey 2px solid;
 }
 
 .page span{
