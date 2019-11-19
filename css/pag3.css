@@ -9,6 +9,7 @@ body{
   align-items: center;
   height: 100vh;
   color: aqua;
+  font-family: sans-serif;
 }
 #correcta{
   position: absolute;
@@ -134,7 +135,7 @@ body{
   display: none;
   cursor: pointer;
   background: rgba(255, 255, 255, 0);
-  width: 50vw;
+  width: 46.4vw;
   text-shadow: aqua 0px 0px 20px;
   z-index: 1;
   justify-content: center;
